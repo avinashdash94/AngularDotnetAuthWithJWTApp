@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "oFYW7+iJ+tqoEjs9Qg2sI5mY2dUb09zhiJqT0ifb4geW5GBC82gHOeEkAlt/DLyCCkeEBMAzrFqyXY9VZTR2FA==",
+  "success": true,
+  "projectFilePath": "C:\\D_Drive\\CodingPractice\\2023\\Demo\\GleasonInterview\\GleasonWebAPI\\JWTAuthentication\\JWTAuthentication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alnu\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\alnu\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\alnu\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\alnu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\alnu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\alnu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
