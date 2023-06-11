@@ -6,24 +6,24 @@
                     <!-- <fa-icon [icon]="faLock" class="fa-3x"></fa-icon> -->
                 </div>
                 <div class="text-center">
-                    <h2>Welcome</h2>
+                    <h2>GEMS Cloud Web Aplication</h2>
                 </div>
                 <p style="color: lightslategray; text-align: center;">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your login
-                    details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                   
+                </p>
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Email" class="form-control" formControlName="email"
-                            name="email" />
+                        <input type="email" id="email" placeholder="User Name" class="form-control" formControlName="UserName"
+                            name="UserName" />
                     </div>
                     <div class="form-group">
                         <input type="password" id="password" placeholder="Password" class="form-control"
-                            formControlName="password" name="password" />
+                            formControlName="Password" name="password" />
                     </div>
-                    <input type="submit" class="btn btn-primary w-100" value="Login" name="">
+                    <input type="submit" class="btn btn-primary w-100" value="Sign In" name="">
                 </form>
             </div>
-            <div class="card-footer text-right">
+            <div class="card-footer text-center">
                 <small><a routerLink="../forgot-password">Forgot Password</a></small>
             </div>
         </div>

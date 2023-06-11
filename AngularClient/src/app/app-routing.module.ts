@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -12,6 +13,8 @@ const routes: Routes = [
   //Load the admin module using lazy loading concept(means load on demand)
   {
     path:'admin',
+    //Addid guard so that only login user can acces the admin dash board
+    canActivate:[AuthGuard],
     loadChildren: ()=>
       import('./modules/admin/admin.module').then((m) => m.AdminModule)
   },
