@@ -38,11 +38,21 @@ namespace GleasonWebAPI
             services.AddDbContext<APIDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("UserAppCon")));
 
             //Enable CORS
-            services.AddCors(c =>
+            //services.AddCors();
+            //services.AddCors(c =>
+            //{
+            //    //c.AddPolicy("GleasonAllowOrigin", options => options.WithOrigins("http://localhost:4200").AllowAnyMethod()
+            //    c.AddPolicy("GleasonAllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+            //      .AllowAnyHeader());
+            //});
+            services.AddCors(option =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
-                  .AllowAnyHeader());
+                option.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
             });
+
 
             //Configured the jwt token
             var bindJwtSettings = new JwtSettings();
@@ -113,8 +123,14 @@ namespace GleasonWebAPI
             }
 
             app.UseHttpsRedirection();
-
+            //app.UseCors(options =>
+            //{
+            //    options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader();
+            //});
+            //app.UseCors("GleasonAllowOrigin");
+            app.UseCors();
             app.UseRouting();
+
 
             app.UseAuthorization();
 

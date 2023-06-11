@@ -1,6 +1,7 @@
 ﻿using GleasonWebAPI.Models;
 using GleasonWebAPI.Repository;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -38,9 +39,9 @@ namespace GleasonWebAPI.Controllers
                         Password = "Admin",
                 }
         };
-
+        //[EnableCors("GleasonAllowOrigin")]
         [HttpPost]
-        public async Task<IActionResult> Login(UserLogins userLogins)
+        public async Task<IActionResult> Login([FromBody]UserLogins userLogins)
         {
             try
             {

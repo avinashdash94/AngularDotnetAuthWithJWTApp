@@ -23,10 +23,14 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.auth.login({ email:this.loginForm.value.UserName, password:this.loginForm.value.Password }).subscribe(
+      this.auth.login(this.loginForm.value).subscribe(
         (result) => {
           console.log(result);
-          this.router.navigate(['/admin']);
+          if(this.auth.isLoggedIn())
+            this.router.navigate(['/admin']);
+          else{
+            alert('Username password is wrong please try again...');
+          }
         },
         (err: Error) => {
           alert(err.message);

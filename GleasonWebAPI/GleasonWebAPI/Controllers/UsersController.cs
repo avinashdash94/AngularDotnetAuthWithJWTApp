@@ -23,7 +23,7 @@ namespace GleasonWebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllUsers")]
-        //[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> GetAllUsers()
         {
             return Ok(await _users.GetAllUsers());
@@ -38,8 +38,8 @@ namespace GleasonWebAPI.Controllers
         }
 
         [HttpPost]
-        [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> Post(User user)
+        //[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> AddNewUser(User user)
         {
             var result = await _users.InsertUser(user);
             if (result.UserID == 0)
@@ -52,7 +52,7 @@ namespace GleasonWebAPI.Controllers
         [HttpPut]
         [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         //[Route("UpdateDepartment")]
-        public async Task<IActionResult> Put(User user)
+        public async Task<IActionResult> UpdateUser(User user)
         {
             await _users.UpdateUser(user);
             return Ok("Updated Successfully");
@@ -61,7 +61,7 @@ namespace GleasonWebAPI.Controllers
         [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         //[HttpDelete("{id}")]
         //[Route("DeleteDepartment")]
-        public JsonResult Delete(int id)
+        public JsonResult DeleteUser(int id)
         {
             _users.DeleteUser(id);
             return new JsonResult("Deleted Successfully");
