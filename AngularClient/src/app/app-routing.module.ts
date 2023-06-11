@@ -9,6 +9,12 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'forgot-password', component: ForgotPasswordComponent},
   {path:'', redirectTo: '/login', pathMatch: 'full'},
+  //Load the admin module using lazy loading concept(means load on demand)
+  {
+    path:'admin',
+    loadChildren: ()=>
+      import('./modules/admin/admin.module').then((m) => m.AdminModule)
+  },
   {path:'**', component: NotFoundComponent},
 
 ];
