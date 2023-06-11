@@ -38,7 +38,7 @@ namespace GleasonWebAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize(AuthenticationSchemes = Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> AddNewUser(User user)
         {
             var result = await _users.InsertUser(user);
