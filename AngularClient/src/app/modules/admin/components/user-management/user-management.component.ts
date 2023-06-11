@@ -15,10 +15,25 @@ export class UserManagementComponent implements OnInit {
     this.adminService.getAllUsers().subscribe((result)=>{
       //console.log(result);
       this.usersRecord = result;
-
     })
   }
+  onEdit(item: any){
+    item.isEdit = true;
+    console.log(item);
+  }
 
+  updateUser(item: any){
+    // delete item['isEdit'];
+    // console.log(item);
+    let tempUser = item;
+    delete tempUser['isEdit'];
+    // console.log(item);
+    // console.log(tempUser);
+    this.adminService.updateUser(tempUser).subscribe((result)=>{
+      console.log(result);
+    })
+    
+  }
  
 
 }
