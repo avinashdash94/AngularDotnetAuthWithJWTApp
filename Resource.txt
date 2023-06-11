@@ -7,6 +7,10 @@ https://www.c-sharpcorner.com/article/jwt-token-authentication-and-authorization
 
 https://www.c-sharpcorner.com/article/net-core-3-1-web-api-crud/
 
+--*** Angular Resources
+https://stackblitz.com/edit/angular-9-registration-login-dashboard?file=src%2Findex.html,src%2Fapp%2Fhome%2Fhome.component.html,src%2Fapp%2Fapp.component.html,src%2Fapp%2Fapp.module.ts
+
+https://www.youtube.com/watch?v=ibn2yAomxp8&t=79s
 
 
 
