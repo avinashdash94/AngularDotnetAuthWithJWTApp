@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AdminService } from '../../adminServices/admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-registration',
@@ -16,7 +17,7 @@ export class UserRegistrationComponent implements OnInit {
     Email: new FormControl(''),
     Password: new FormControl(''),
   });
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +26,9 @@ export class UserRegistrationComponent implements OnInit {
     this.adminService.addNewUser(this.userRegistrationForm.value).subscribe((res)=>{
       console.log("res");
       console.log(res);
+      alert("user Added successflly...")
+      this.userRegistrationForm.reset();
+     // this.router.navigate(['../userManagement']);
     });
   }
 

@@ -11,6 +11,7 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Email</th>
+          <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -48,6 +49,7 @@
           </div>
           <div *ngIf="!user.isEdit">
             <button class=" btn btn-sm btn-success" (click)="onEdit(user)">Edit</button>
+            <button class=" btn btn-sm btn-success" (click)="DeleteUser(user.userID)">Delete</button>
           </div>
           
         </td>

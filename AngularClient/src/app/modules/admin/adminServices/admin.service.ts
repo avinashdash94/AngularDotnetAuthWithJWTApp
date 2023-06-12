@@ -51,6 +51,21 @@ export class AdminService {
           }
         );
     });
-   
+  }
+  DeleteUser(Id: any):Observable<any[]>{
+    return new Observable<any>(observer => {
+      this.http
+        .delete<any>(
+          'https://localhost:44313/api/Users?id='+Id
+        )
+        .subscribe(
+          res => {
+            observer.next(res);
+          },
+          error => {
+            observer.next(null);
+          }
+        );
+    });
   }
 }
